@@ -1,0 +1,54 @@
+---
+title: Welcome to Grains.js
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Reactive micro-states library for HTML.
+  actions:
+    - text: Example Guide
+      link: /guides/example/
+      icon: right-arrow
+    - text: Read the Grains docs
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+### Why Grains.js?
+
+##### Island-based local states (Grains)
+1. Each element with `g-state` is a grain of state—completely independent from other HTML elements.
+2. Grains.js encourages multiple, decentralized pockets of state, so you can keep concerns neatly separated.
+##### Minimal directives, expanding possibilities
+    1. Grains.js ships with a small set of core directives—like `g-state`, `g-text`, `g-click`—and is being expanded to include others, such as `g-if` for conditional rendering.
+    2. By incrementally introducing just enough directives, you can keep your HTML expressive and reactive without adopting a full-blown framework syntax.
+##### Zero build process, pure script
+    1. You only need a `<script src="grains.js">` tag to get started. No bundlers, no transpilers, no Node.js-based project setup required. It’s easy to drop into existing server-rendered pages or static sites for an instant boost of interactivity.
+##### Mutable or immutable state (with Undo/Redo)
+    1. Grains.js can mutate state in place for performance, or operate in immutable mode to enable advanced debugging and time-travel features (i.e., `undo()` and `redo()`). You choose the best approach for each grain of state.
+##### Async-friendly
+    1. Because Grains.js calls named functions (e.g., `g-click="fetchData"`) rather than forcing inline expressions, you can easily incorporate async calls, data fetching, or other complex logic in pure JavaScript—cleanly separated from your HTML.
+
+In short, Grains.js delivers a lightweight, island-based reactive approach—no global store, no build setup, and a growing set of directives that let you sprinkle declarative UI logic throughout your pages. It’s a natural choice if you need _just enough_ reactivity to stay productive, without the overhead of a full framework.
+
+
+
+
+## Next steps
+
+<CardGrid stagger>
+  <Card title="Update content" icon="pencil">
+    Edit `src/content/docs/index.mdx` to see this page change.
+  </Card>
+  <Card title="Add new content" icon="add-document">
+    Add Markdown or MDX files to `src/content/docs` to create new pages.
+  </Card>
+  <Card title="Configure your site" icon="setting">
+    Edit your `sidebar` and other config in `astro.config.mjs`.
+  </Card>
+  <Card title="Read the docs" icon="open-book">
+    Learn more in [the Grains Docs](https://starlight.astro.build/).
+  </Card>
+</CardGrid>
