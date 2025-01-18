@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { LinkButton } from "@astrojs/starlight/components";
 
 const { data } = Astro.props.entry;
 const { title = data.title, tagline, image, actions = [] } = data.hero || {};
@@ -31,11 +32,20 @@ if (image) {
   href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css"
   rel="stylesheet"
 />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"
-></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"
+  is:inline></script>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"
-></script>
+  is:inline></script>
+<script is:inline>
+  // Initialize Prism after the page loads
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if (typeof Prism !== "undefined") {
+      Prism.highlightAll();
+    }
+  });
+</script>
 
 <div class="hero">
   {
@@ -90,11 +100,8 @@ Grains.init();
     {
       actions.length > 0 && (
         <div class="sl-flex actions">
-          <a
-            class="sl-link-button not-content primary astro-jbfsktt5 astro-xwgiixxa"
-            href="/guides/example/"
-          >
-          See demo
+          <LinkButton href="/guides/example/">
+            See demo
             <svg
               aria-hidden="true"
               class="astro-xwgiixxa astro-c6vsoqas"
@@ -106,11 +113,8 @@ Grains.init();
             >
               <path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z" />
             </svg>
-          </a>
-          <a
-            class="sl-link-button not-content minimal astro-jbfsktt5 astro-xwgiixxa"
-            href="https://starlight.astro.build"
-          >
+          </LinkButton>
+          <LinkButton variant="minimal" href="https://starlight.astro.build">
             Read the Grains docs
             <svg
               aria-hidden="true"
@@ -124,7 +128,7 @@ Grains.init();
               <path d="M19.33 10.18a1 1 0 0 1-.77 0 1 1 0 0 1-.62-.93l.01-1.83-8.2 8.2a1 1 0 0 1-1.41-1.42l8.2-8.2H14.7a1 1 0 0 1 0-2h4.25a1 1 0 0 1 1 1v4.25a1 1 0 0 1-.62.93Z" />
               <path d="M11 4a1 1 0 1 1 0 2H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4Z" />
             </svg>
-          </a>
+          </LinkButton>
         </div>
       )
     }

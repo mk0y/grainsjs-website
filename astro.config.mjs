@@ -6,6 +6,11 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
+  site:
+    process.env.NODE_ENV === "production"
+      ? "https://grainsjs.netlify.app"
+      : "http://localhost:3000",
+  base: "/",
   integrations: [
     starlight({
       title: "Grains.js",
