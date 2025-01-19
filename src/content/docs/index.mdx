@@ -16,8 +16,7 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
-### Why Grains.js?
-
+<Card title="Why Grains.js?" icon="heart">
 ##### Island-based local states (Grains)
 1. Each element with `g-state` is a grain of state—completely independent from other HTML elements.
 2. Grains.js encourages multiple, decentralized pockets of state, so you can keep concerns neatly separated.
@@ -32,6 +31,7 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
     1. Because Grains.js calls named functions (e.g., `g-click="fetchData"`) rather than forcing inline expressions, you can easily incorporate async calls, data fetching, or other complex logic in pure JavaScript—cleanly separated from your HTML.
 
 In short, Grains.js delivers a lightweight, island-based reactive approach—no global store, no build setup, and a growing set of directives that let you sprinkle declarative UI logic throughout your pages. It’s a natural choice if you need _just enough_ reactivity to stay productive, without the overhead of a full framework.
+</Card>
 
 
 

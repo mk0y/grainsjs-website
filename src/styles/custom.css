@@ -10,7 +10,8 @@
 	--sl-color-gray-4: #605744;
 	--sl-color-gray-5: #403725;
 	--sl-color-gray-6: #2e2614;
-	--sl-color-black: #1b1810;
+	--sl-color-black: #1b1810; /* background color */
+	--sl-color-background: #4b2e0d; /* warmer brown color */
 }
 /* Light mode colors. */
 :root[data-theme='light'] {
@@ -26,4 +27,17 @@
 	--sl-color-gray-6: #f1ede4;
 	--sl-color-gray-7: #f8f6f1;
 	--sl-color-black: #ffffff;
+	--sl-color-background: #ffffff;
+}
+
+/* static background image */
+:root[data-theme='dark'] body {
+	background-image: url('/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: var(--sl-color-background); /* warmer brown color */
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+	backdrop-filter: blur(2px) sepia(90%);
 }
