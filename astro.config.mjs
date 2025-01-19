@@ -13,7 +13,7 @@ export default defineConfig({
   base: "/",
   integrations: [
     starlight({
-      title: "Reactive micro-states library for HTML",
+      title: "Grains.js",
       logo: {
         src: "./src/assets/grains.png",
       },
